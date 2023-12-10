@@ -52,6 +52,22 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+    <profile>
+        <id>dev</id> <!-- 开发环境的 profile -->
+        <repositories>
+            <repository>
+                <id>tencent</id>
+                <name>tencent maven mirror</name>
+                <url>https://mirrors.tencent.com/nexus/repository/maven-public/</url>
+            </repository>
+        </repositories>
+        <!-- 这里可以指定更多针对开发环境的设置 -->
+    </profile>
+    </profiles>
+
+
+
     <build>
         <plugins>
             <plugin>

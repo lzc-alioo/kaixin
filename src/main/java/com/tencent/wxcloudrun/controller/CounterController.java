@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.List;
 
@@ -79,5 +80,22 @@ public class CounterController {
       return ApiResponse.error("参数action错误");
     }
   }
-  
+
+
+  /**
+   * 获取当前计数
+   * @return API response json
+   */
+  @GetMapping(value = "/api/imagelist")
+  ApiResponse getImageList() {
+    logger.info("/api/imagelist get request");
+    List<String> list = new ArrayList<>();
+    list.add("1.png");
+    list.add("2.png");
+    list.add("3.png");
+    list.add("4.png");
+    list.add("5.png");
+
+    return ApiResponse.ok(list);
+  }
 }
